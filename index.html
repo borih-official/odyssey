@@ -228,6 +228,7 @@
   .reset{background:none;border:0;color:var(--muted);cursor:pointer;font-family:var(--font-mono);
     font-size:11px;text-decoration:underline;text-underline-offset:3px;padding:0;margin-top:10px;}
   .reset:hover{color:var(--bronze);}
+  .reset-warn{margin-left:10px;font-size:10px;letter-spacing:.06em;color:var(--wine);opacity:.85;}
 
   @media (max-width:560px){
     .wrap{padding:44px 16px 72px;}
@@ -1023,8 +1024,9 @@
     행 번호는 천병희 역본 여백에 표기된 원문 행수 기준입니다.<br>
     주차는 월요일에 시작해 일요일에 끝나며, 모임은 모두 일요일입니다.<br>
     <a class="xlink" href="agenda.html">예시 발제 15 보러 가기 →</a><br>
-    이름과 체크 상태는 이 기기에 저장됩니다.
+    <span id="storeNote">이름과 체크 상태는 이 기기에 저장됩니다.</span>
     <br><button class="reset" id="reset">전체 초기화</button>
+    <span class="reset-warn" id="resetWarn"></span>
   </footer>
 
 </div>
@@ -1051,6 +1053,14 @@
   function status(text, cls){
     var e = $("#syncState");
     if (e){ e.textContent = text; e.className = "sync" + (cls ? " " + cls : ""); }
+    var n = $("#storeNote");
+    if (n){
+      n.textContent = (cls === "on")
+        ? "이름과 체크는 참여자 모두가 함께 보는 기록에 저장됩니다."
+        : "지금은 이 기기에만 저장됩니다.";
+    }
+    var w = $("#resetWarn");
+    if (w) w.textContent = (cls === "on") ? "— 모두의 기록이 지워집니다" : "";
   }
   function headers(extra){
     var h = { "apikey": SUPABASE_KEY, "Authorization": "Bearer " + SUPABASE_KEY,
