@@ -666,9 +666,9 @@
 
   <div class="sect-head gallery">
     <span class="sect-kicker">독서로 완성되는</span>
-    <h2>오디세이아 갤러리</h2>
+    <h2>오뒷세이아 갤러리</h2>
   </div>
-  <div class="sync" id="syncState">이 기기에만 저장됩니다</div>
+  <div class="sync" id="syncState">연결 상태를 확인하는 중…</div>
   <p class="intro">
     이름을 적어주세요. 그 주에 읽은 분량에 체크하시면 그림 위로 조명이 번집니다.<br>
     열 분이 모두 읽으신 달에는 명화 한 점이 온전히 밝혀집니다.
@@ -770,7 +770,7 @@
       <span class="beam" aria-hidden="true"></span>
     </figure>
     <div class="plate">
-      <div class="plate-title">《오디세우스와 폴리페모스》</div>
+      <div class="plate-title">《오뒷세우스와 폴뤼페모스》</div>
       <div class="plate-en">Odysseus and Polyphemus</div>
       <div class="plate-artist">아놀드 뵈클린 (Arnold Böcklin, 1827~1901)</div>
       <div class="plate-meta">1896년 · 패널에 유채 및 템페라 · 미국 보스턴 미술관</div>
@@ -893,7 +893,7 @@
       <span class="beam" aria-hidden="true"></span>
     </figure>
     <div class="plate">
-      <div class="plate-title">《오디세우스와 사이렌》</div>
+      <div class="plate-title">《오뒷세우스와 세이렌》</div>
       <div class="plate-en">Ulysses and the Sirens</div>
       <div class="plate-artist">존 윌리엄 워터하우스 (John William Waterhouse, 1849~1917)</div>
       <div class="plate-meta">1891년 · 캔버스에 유채 · 호주 빅토리아 국립미술관, 멜버른</div>
@@ -986,7 +986,7 @@
       <span class="beam" aria-hidden="true"></span>
     </figure>
     <div class="plate">
-      <div class="plate-title">《오디세우스와 페넬로페》</div>
+      <div class="plate-title">《오뒷세우스와 페넬로페》</div>
       <div class="plate-en">Odysseus und Penelope</div>
       <div class="plate-artist">요한 하인리히 빌헬름 티슈바인 (Johann Heinrich Wilhelm Tischbein, 1751~1829)</div>
       <div class="plate-meta">1802년 · 캔버스에 유채 · 독일 올덴부르크 주립미술·문화사박물관</div>
@@ -1023,8 +1023,7 @@
   <footer>
     행 번호는 천병희 역본 여백에 표기된 원문 행수 기준입니다.<br>
     주차는 월요일에 시작해 일요일에 끝나며, 모임은 모두 일요일입니다.<br>
-    <a class="xlink" href="agenda.html">예시 발제 15 보러 가기 →</a><br>
-    <span id="storeNote">이름과 체크 상태는 이 기기에 저장됩니다.</span>
+    <span id="storeNote">연결 상태를 확인하는 중입니다.</span>
     <br><button class="reset" id="reset">전체 초기화</button>
     <span class="reset-warn" id="resetWarn"></span>
   </footer>
@@ -1057,7 +1056,7 @@
     if (n){
       n.textContent = (cls === "on")
         ? "이름과 체크는 참여자 모두가 함께 보는 기록에 저장됩니다."
-        : "지금은 이 기기에만 저장됩니다.";
+        : "아직 연결되지 않아 이 기기에만 저장됩니다. 깃허브 주소로 열면 함께 보기로 바뀝니다.";
     }
     var w = $("#resetWarn");
     if (w) w.textContent = (cls === "on") ? "— 모두의 기록이 지워집니다" : "";
@@ -1234,7 +1233,7 @@
     timer = setInterval(function(){ if (!document.hidden) pull(); }, 10000);
     document.addEventListener("visibilitychange", function(){ if (!document.hidden) pull(); });
   } else {
-    status("이 기기에만 저장됩니다", "");
+    status("공유 설정이 되어 있지 않습니다 · 이 기기에만 저장", "");
   }
 })();
 </script>
